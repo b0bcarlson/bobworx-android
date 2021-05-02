@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@color/lightgrey">
+
+    <TextView
+        android:id="@+id/list_item_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Group Name"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/list_item_item_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAME"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_item_group_name" />
+
+    <CheckBox
+        android:id="@+id/checkbox_tripped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintEnd_toStartOf="@id/checkbox_signed"
+        app:layout_constraintTop_toTopOf="@id/list_item_item_name_tv" />
+
+    <CheckBox
+        android:id="@+id/checkbox_signed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/list_item_item_name_tv" />
+
+    <TextView
+        android:id="@+id/control_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="control"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_item_item_name_tv" />
+
+    <TextView
+        android:id="@+id/competitor_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="competitor"
+        app:layout_constraintEnd_toStartOf="@+id/checkbox_tripped"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/control_price_tv" />
+
+    <TextView
+        android:id="@+id/difference_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="difference"
+        app:layout_constraintEnd_toStartOf="@id/checkbox_tripped"
+        app:layout_constraintTop_toTopOf="@id/control_price_tv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

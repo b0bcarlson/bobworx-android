@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="url_base">https://bobworx.bobcodes.net/v1/</string>
+    <string name="url_getToken">getToken</string>
+    <string name="url_verifyToken">verifyToken</string>
+    <string name="url_getItems">getItems</string>
+    <string name="url_addUpc">addUpc</string>
+    <string name="url_tripped">untrip</string>
+    <string name="url_signed">signed</string>
+</resources>

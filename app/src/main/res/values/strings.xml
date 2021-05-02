@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Bobworx</string>
+    <string name="log_in">Log in</string>
+    <string name="login_error_unverified">Could not verify token, try logging in</string>
+    <string name="login_error_undefined">Could not log in</string>
+    <string name="trucks">TRUCKS</string>
+    <string name="back">Back</string>
+    <string name="error_compares_network">Error getting compares (network)</string>
+    <string name="error_compares_parse">Error processing compares</string>
+    <string name="error_login">Could not log in</string>
+    <string name="url_getItem">getItem</string>
+    <string name="url_getItemData">getItemData</string>
+    <string name="error_adding_upc">Error adding UPC</string>
+    <string name="added_UPC">Added UPC</string>
+    <string name="upc_not_added">UPC not added</string>
+    <string name="error_invalid_upc">Invalid UPC</string>
+    <string name="error_untripping">Error untripping</string>
+</resources>
