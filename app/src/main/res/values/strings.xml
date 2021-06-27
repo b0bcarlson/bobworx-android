@@ -17,4 +17,9 @@
     <string name="error_untripping">Error untripping</string>
     <string name="signed">Signed</string>
     <string name="tripped">Tripped</string>
+    <string name="group_name">Group Name</string>
+    <string name="name">NAME</string>
+    <string name="control">control</string>
+    <string name="competitor">competitor</string>
+    <string name="difference">difference</string>
 </resources>

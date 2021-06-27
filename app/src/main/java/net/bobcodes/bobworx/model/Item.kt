@@ -30,6 +30,9 @@ class Item : Model("item", "items") {
 		if(jsonObject.has("upc")){
 			item.upc = jsonObject.getString("upc")
 		}
+		if(jsonObject.has("stale")){
+			item.stale = jsonObject.getBoolean("stale")
+		}
 		try {
 			if (jsonObject.has("control_price")) {
 				item.controlPrice = jsonObject.getInt("control_price")
@@ -58,4 +61,5 @@ class Item : Model("item", "items") {
 	var difference: Int? = null
 	var target: Int = 0
 	lateinit var upc: String
+	var stale: Boolean = false
 }
