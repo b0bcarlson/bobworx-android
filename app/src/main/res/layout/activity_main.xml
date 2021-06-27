@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/main_trucks_bt"
+        android:id="@+id/main_tracks_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/trucks"
+        android:text="@string/tracks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -3,7 +3,7 @@
     <string name="log_in">Log in</string>
     <string name="login_error_unverified">Could not verify token, try logging in</string>
     <string name="login_error_undefined">Could not log in</string>
-    <string name="trucks">TRUCKS</string>
+    <string name="tracks">TRACKS</string>
     <string name="back">Back</string>
     <string name="error_compares_network">Error getting compares (network)</string>
     <string name="error_compares_parse">Error processing compares</string>
@@ -15,4 +15,6 @@
     <string name="upc_not_added">UPC not added</string>
     <string name="error_invalid_upc">Invalid UPC</string>
     <string name="error_untripping">Error untripping</string>
+    <string name="signed">Signed</string>
+    <string name="tripped">Tripped</string>
 </resources>

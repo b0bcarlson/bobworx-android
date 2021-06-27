@@ -23,12 +23,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.MainActivity" />
-        <activity android:name=".trucks.TrucksActivity"
+        <activity android:name=".tracks.TracksActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".main.MainActivity" />
-        <activity android:name=".trucks.detail.TrucksDetailActivity"
+        <activity android:name=".tracks.detail.TracksDetailActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".trucks.TrucksActivity" />
+            android:parentActivityName=".tracks.TracksActivity" />
     </application>
 
 </manifest>

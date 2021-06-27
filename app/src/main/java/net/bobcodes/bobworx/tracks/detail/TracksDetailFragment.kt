@@ -1,4 +1,4 @@
-package net.bobcodes.bobworx.trucks.detail
+package net.bobcodes.bobworx.tracks.detail
 
 import android.os.Bundle
 import android.util.Log
@@ -26,7 +26,7 @@ import java.lang.Exception
 import java.nio.charset.Charset
 
 
-class TrucksDetailFragment : GenericFragmentWithListener(TAG) {
+class TracksDetailFragment : GenericFragmentWithListener(TAG) {
 	lateinit var itemId:String
 	lateinit var itemUpc:String
 	lateinit var nameTV: TextView
@@ -42,7 +42,7 @@ class TrucksDetailFragment : GenericFragmentWithListener(TAG) {
 	): View? {
 		retainInstance = true
 		val root: View =
-			inflater.inflate(R.layout.fragment_trucks_detail, container, false)
+			inflater.inflate(R.layout.fragment_tracks_detail, container, false)
 		nameTV = root.findViewById(R.id.item_name)
 		compTV = root.findViewById(R.id.competitor_price)
 		contTV = root.findViewById(R.id.control_price)
@@ -166,6 +166,6 @@ class TrucksDetailFragment : GenericFragmentWithListener(TAG) {
 		fun onResetScanner()
 	}
 	companion object {
-		const val TAG = "TrucksDetailFragment"
+		const val TAG = "TracksDetailFragment"
 	}
 }

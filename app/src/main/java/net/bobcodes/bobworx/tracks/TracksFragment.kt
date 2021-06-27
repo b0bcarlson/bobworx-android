@@ -1,4 +1,4 @@
-package net.bobcodes.bobworx.trucks
+package net.bobcodes.bobworx.tracks
 
 import android.graphics.Color.green
 import android.os.Bundle
@@ -22,7 +22,7 @@ import org.json.JSONException
 import java.lang.Exception
 
 
-class TrucksFragment : GenericFragmentWithListener(TAG) {
+class TracksFragment : GenericFragmentWithListener(TAG) {
 	private lateinit var listView: ListView
 	private lateinit var items: ArrayList<Item>
 	private lateinit var adapter: Model.ItemAdapter<Item>
@@ -84,7 +84,7 @@ class TrucksFragment : GenericFragmentWithListener(TAG) {
 							obj
 						)
 						listView.setOnItemClickListener { _, _, position, _ ->
-							Log.d("TrucksFragment", "Item selected")
+							Log.d("TracksFragment", "Item selected")
 							onItemSelected(items[position])
 						}
 						listView.adapter = adapter
@@ -108,14 +108,14 @@ class TrucksFragment : GenericFragmentWithListener(TAG) {
 		(listener as OnFragmentInteractionListener).onUpcs(upcs)
 	}
 	interface OnFragmentInteractionListener : net.bobcodes.bobworx.generic.OnFragmentInteractionListener {
-		fun onOpenScanner();
+		fun onOpenScanner()
 
 		fun onItemSelected(item: Item)
 
 		fun onUpcs(upcs: HashMap<String, String>)
 	}
 	companion object {
-		const val TAG = "TrucksFragment"
+		const val TAG = "TracksFragment"
 	}
 
 }

@@ -1,4 +1,4 @@
-package net.bobcodes.bobworx.trucks
+package net.bobcodes.bobworx.tracks
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -10,11 +10,11 @@ import net.bobcodes.bobworx.generic.LoadingFragment
 import net.bobcodes.bobworx.generic.TextFragment
 import net.bobcodes.bobworx.model.Item
 import net.bobcodes.bobworx.scanner.ScannerFragment
-import net.bobcodes.bobworx.trucks.detail.TrucksDetailActivity
+import net.bobcodes.bobworx.tracks.detail.TracksDetailActivity
 import org.json.JSONException
 
-class TrucksActivity: GenericActivity(), TrucksFragment.OnFragmentInteractionListener, ScannerFragment.OnFragmentInteractionListener {
-	lateinit var trucksFragment: TrucksFragment
+class TracksActivity: GenericActivity(), TracksFragment.OnFragmentInteractionListener, ScannerFragment.OnFragmentInteractionListener {
+	lateinit var tracksFragment: TracksFragment
 	lateinit var scannerFragment: ScannerFragment
 	lateinit var upcs: HashMap<String, String>
 	var activityStarted = false
@@ -22,25 +22,25 @@ class TrucksActivity: GenericActivity(), TrucksFragment.OnFragmentInteractionLis
 	override fun onCreate(savedInstanceState: Bundle?) {
 		val result = super.onCreate(
 			savedInstanceState, LoadingFragment::class.java,
-			TrucksFragment::class.java, TextFragment::class.java, ScannerFragment::class.java
+			TracksFragment::class.java, TextFragment::class.java, ScannerFragment::class.java
 		)
 		getFragment(LoadingFragment.TAG)
 		getFragment(TextFragment.TAG)
 		scannerFragment = getFragment(ScannerFragment.TAG) as ScannerFragment
-		trucksFragment = getFragment(TrucksFragment.TAG) as TrucksFragment
+		tracksFragment = getFragment(TracksFragment.TAG) as TracksFragment
 		if(result)
-			trucksFragment.getCompares()
-		else if(!trucksFragment.isHidden)
-			trucksFragment.getCompares()
+			tracksFragment.getCompares()
+		else if(!tracksFragment.isHidden)
+			tracksFragment.getCompares()
 
 	}
 	override fun onBackPressed() {
 		when (visibleFragment) {
-			TrucksFragment.TAG, LoadingFragment.TAG, TextFragment.TAG -> {
+			TracksFragment.TAG, LoadingFragment.TAG, TextFragment.TAG -> {
 				finish()
 				return
 			}
-			ScannerFragment.TAG -> switchFragment(trucksFragment)
+			ScannerFragment.TAG -> switchFragment(tracksFragment)
 		}
 	}
 	override fun onOpenScanner() {
@@ -50,7 +50,7 @@ class TrucksActivity: GenericActivity(), TrucksFragment.OnFragmentInteractionLis
 	override fun onItemSelected(item: Item) {
 		val intent = Intent(
 			this,
-			TrucksDetailActivity::class.java
+			TracksDetailActivity::class.java
 		)
 		val bundle = Bundle()
 		try {
@@ -80,7 +80,7 @@ class TrucksActivity: GenericActivity(), TrucksFragment.OnFragmentInteractionLis
 			return
 		val intent = Intent(
 			this,
-			TrucksDetailActivity::class.java
+			TracksDetailActivity::class.java
 		)
 		val bundle = Bundle()
 		if (upcs.containsKey(upc))
