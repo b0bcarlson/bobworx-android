@@ -29,6 +29,9 @@
         <activity android:name=".tracks.detail.TracksDetailActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".tracks.TracksActivity" />
+        <activity android:name=".tracks.exactMatch.TracksExactMatchActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".tracks.TracksActivity" />
     </application>
 
 </manifest>

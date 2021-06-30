@@ -1,6 +1,7 @@
 package net.bobcodes.bobworx.tracks
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import net.bobcodes.bobworx.R
@@ -11,13 +12,14 @@ import net.bobcodes.bobworx.generic.TextFragment
 import net.bobcodes.bobworx.model.Item
 import net.bobcodes.bobworx.scanner.ScannerFragment
 import net.bobcodes.bobworx.tracks.detail.TracksDetailActivity
+import net.bobcodes.bobworx.tracks.exactMatch.TracksExactMatchActivity
 import org.json.JSONException
 
 class TracksActivity: GenericActivity(), TracksFragment.OnFragmentInteractionListener, ScannerFragment.OnFragmentInteractionListener {
-	lateinit var tracksFragment: TracksFragment
-	lateinit var scannerFragment: ScannerFragment
-	lateinit var upcs: HashMap<String, String>
-	var activityStarted = false
+	private lateinit var tracksFragment: TracksFragment
+	private lateinit var scannerFragment: ScannerFragment
+	private lateinit var upcs: HashMap<String, String>
+	private var activityStarted = false
 	@SuppressLint("MissingSuperCall")
 	override fun onCreate(savedInstanceState: Bundle?) {
 		val result = super.onCreate(
@@ -65,7 +67,7 @@ class TracksActivity: GenericActivity(), TracksFragment.OnFragmentInteractionLis
 	override fun onUpcs(upcs: HashMap<String, String>) {
 		this.upcs = upcs
 	}
-	fun onResetScanner(resetRead: Boolean = false){
+	private fun onResetScanner(resetRead: Boolean = false){
 		scannerFragment.resetScanner(resetRead)
 	}
 
@@ -78,13 +80,13 @@ class TracksActivity: GenericActivity(), TracksFragment.OnFragmentInteractionLis
 	override fun onBarcodeRead(upc: String) {
 		if(activityStarted)
 			return
-		val intent = Intent(
-			this,
-			TracksDetailActivity::class.java
-		)
-		val bundle = Bundle()
 		if (upcs.containsKey(upc))
 			try {
+				val intent = Intent(
+					this,
+					TracksDetailActivity::class.java
+				)
+				val bundle = Bundle()
 				bundle.putString("item", upcs[upc])
 				intent.putExtras(bundle)
 				startActivityForResult(intent, 999)
@@ -92,8 +94,28 @@ class TracksActivity: GenericActivity(), TracksFragment.OnFragmentInteractionLis
 			} catch (e: JSONException) {
 				e.printStackTrace()
 			}
-		else
+		else{
 			Utils.playsound(this, R.raw.error2)
+			if(!Utils.isUpcPrivateLabel(upc)){
+					AlertDialog.Builder(this).setMessage("$upc is not tracked in TRACKS, would you like to search for an exact match?")
+					.setPositiveButton(R.string.ok
+					) { _, _ ->
+						val intent = Intent(
+							this,
+							TracksExactMatchActivity::class.java
+						)
+						val bundle = Bundle()
+						bundle.putString("upc", upc)
+						intent.putExtras(bundle)
+						startActivityForResult(intent, 999)
+						activityStarted = true
+					}
+						.setNegativeButton(R.string.cancel
+					) { dialog, _ ->
+						dialog.dismiss()
+					}.create().show()
+			}
+		}
 		onResetScanner()
 	}
 

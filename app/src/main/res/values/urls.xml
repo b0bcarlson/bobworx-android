@@ -7,4 +7,7 @@
     <string name="url_addUpc">addUpc</string>
     <string name="url_tripped">untrip</string>
     <string name="url_signed">signed</string>
+    <string name="url_getExactMatch">getExactItemFromUpc</string>
+    <string name="url_getItem">getItem</string>
+    <string name="url_getItemData">getItemData</string>
 </resources>

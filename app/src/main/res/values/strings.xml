@@ -8,8 +8,6 @@
     <string name="error_compares_network">Error getting compares (network)</string>
     <string name="error_compares_parse">Error processing compares</string>
     <string name="error_login">Could not log in</string>
-    <string name="url_getItem">getItem</string>
-    <string name="url_getItemData">getItemData</string>
     <string name="error_adding_upc">Error adding UPC</string>
     <string name="added_UPC">Added UPC</string>
     <string name="upc_not_added">UPC not added</string>
@@ -22,4 +20,8 @@
     <string name="control">control</string>
     <string name="competitor">competitor</string>
     <string name="difference">difference</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="weighted">Weighted</string>
+    <string name="exact_match_404">Exact match does not exist at competitor</string>
 </resources>

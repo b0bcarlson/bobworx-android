@@ -57,4 +57,11 @@ object Utils {
 		mp.setOnCompletionListener { mp.release() }
 		mp.start()
 	}
+	fun isUpcPrivateLabel(upc:String): Boolean{
+		//When Bobworx2 is released this will be changed to an api call
+		return (upc.startsWith("075450")||
+				upc.startsWith("036800")||
+				upc.startsWith("011225")||
+				upc.startsWith("2"))
+	}
 }
